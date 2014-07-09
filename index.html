@@ -1,0 +1,340 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>USTM Model Data</title>
+        <script src="http://d3js.org/d3.v3.min.js"></script>
+		<script src="http://d3js.org/queue.v1.min.js"></script>
+		<script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+		<script src="scripts/table.js"></script>
+		<script src="scripts/piechart.js"></script>
+		<script src="scripts/barchar.js"></script>
+		<script src="scripts/TAZmap.js"></script>
+		
+		<link rel="stylesheet" type="text/css" href="stylesheet2.css"/>
+		
+    </head>
+    <body>
+        <h1> USTM Data Analysis</h1>
+        
+        <div id="control">
+			<form name="cont">
+				<select id="cont1" name="mapType">
+					<option value="emp">Employment</option>
+					<option value="hh">Households</option>
+					<option value="at">Area Type</option>
+					<option selected value="tt">Travel Time</option>
+				</select>
+				<select id="cont2" name="city">
+						<option value=  "3031">	Alpine	</option>
+						<option value=	"1984">	Alta	</option>
+						<option value=	"763">	Altamont	</option>
+						<option value=	"1927">	Alton	</option>
+						<option value=	"3084">	American Fork	</option>
+						<option value=	"1206">	Annabella	</option>
+						<option value=	"1584">	Antimony	</option>
+						<option value=	"1899">	Apple Valley	</option>
+						<option value=	"1226">	Aurora	</option>
+						<option value=	"798">	Ballard	</option>
+						<option value=	"74">	Bear River	</option>
+						<option value=	"1381">	Beaver	</option>
+						<option value=	"1426">	Bicknell	</option>
+						<option value=	"1937">	Big Water	</option>
+						<option value=	"1625">	Blanding	</option>
+						<option value=	"2811">	Bluffdale	</option>
+						<option value=	"1595">	Boulder	</option>
+						<option value=	"2356">	Bountiful	</option>
+						<option value=	"1536">	Brian Head	</option>
+						<option value=	"126">	Brigham City	</option>
+						<option value=	"1581">	Cannonville	</option>
+						<option value=	"1300">	Castle Dale	</option>
+						<option value=	"1491">	Cedar City	</option>
+						<option value=	"3076">	Cedar Fort	</option>
+						<option value=	"3052">	Cedar Heights	</option>
+						<option value=	"930">	Centerfield	</option>
+						<option value=	"2339">	Centerville	</option>
+						<option value=	"624">	Charleston	</option>
+						<option value=	"1398">	Circleville	</option>
+						<option value=	"1272">	Clawson	</option>
+						<option value=	"2252">	Clearfield	</option>
+						<option value=	"1295">	Cleveland	</option>
+						<option value=	"2234">	Clinton	</option>
+						<option value=	"513">	Coalvile	</option>
+						<option value=	"77">	Corinne	</option>
+						<option value=	"1106">	Delta	</option>
+						<option value=	"91">	Deweyville	</option>
+						<option value=	"2967">	Draper	</option>
+						<option value=	"747">	Duchesne	</option>
+						<option value=	"3441">	Eagle Mt	</option>
+						<option value=	"1073">	East Carbon	</option>
+						<option value=	"3407">	Elk Ridge	</option>
+						<option value=	"1298">	Elmo	</option>
+						<option value=	"1162">	Elsinore	</option>
+						<option value=	"68">	Elwood	</option>
+						<option value=	"1253">	Emery	</option>
+						<option value=	"1503">	Enoch	</option>
+						<option value=	"1676">	Enterprise	</option>
+						<option value=	"959">	Ephraim	</option>
+						<option value=	"1591">	Escalante	</option>
+						<option value=	"891">	Eureka	</option>
+						<option value=	"3443">	Fairfied	</option>
+						<option value=	"993">	Fairview	</option>
+						<option value=	"2319">	Farmington	</option>
+						<option value=	"2042">	Farr West	</option>
+						<option value=	"925">	Fayette	</option>
+						<option value=	"1265"`>Ferron	</option>
+						<option value=	"78">	Fielding	</option>
+						<option value=	"1135"`>Fillmore	</option>
+						<option value=	"949">	Fountain Green	</option>
+						<option value=	"529">	Francis	</option>
+						<option value=	"2290">	Fruit Heights	</option>
+						<option value=	"391">	Garden City	</option>
+						<option value=	"52">	Garland	</option>
+						<option value=	"3456">	Genola	</option>
+						<option value=	"1917">	Glendale	</option>
+						<option value=	"1215">	Glenwood	</option>
+						<option value=	"460">	Grantsville	</option>
+						<option value=	"1312">	Green River	</option>
+						<option value=	"930">	Gunnison	</option>
+						<option value=	"1438">	Hanksville	</option>
+						<option value=	"2052">	Harrisville	</option>
+						<option value=	"1564">	Hatch	</option>
+						<option value=	"689">	Heber	</option>
+						<option value=	"1019">	Helper	</option>
+						<option value=	"498">	Henefer	</option>
+						<option value=	"1583">	Henrieville	</option>
+						<option value=	"2776">	Herriman	</option>
+						<option value=	"3038">	Highland	</option>
+						<option value=	"1903">	Hildale	</option>
+						<option value=	"1091">	Hinckley	</option>
+						<option value=	"1146">	Holden	</option>
+						<option value=	"2776">	Holladay	</option>
+						<option value=	"90">	Honeyville	</option>
+						<option value=	"2108">	Hooper	</option>
+						<option value=	"17">	Howell	</option>
+						<option value=	"1288">	Huntington	</option>
+						<option value=	"1953">	Huntsville	</option>
+						<option value=	"1862">	Hurricane	</option>
+						<option value=	"169">	Hyde Park	</option>
+						<option value=	"372">	Hyrum	</option>
+						<option value=	"1685">	Ivins	</option>
+						<option value=	"1156">	Joseph	</option>
+						<option value=	"1404">	Junction	</option>
+						<option value=	"530">	Kamas	</option>
+						<option value=	"1925">	Kanab	</option>
+						<option value=	"1462">	Kanarraville	</option>
+						<option value=	"1117">	Kanosh	</option>
+						<option value=	"2287">	Kaysville	</option>
+						<option value=	"1413">	Kingston	</option>
+						<option value=	"1234">	Koosharem	</option>
+						<option value=	"1881">	La Verkin	</option>
+						<option value=	"398">	Laketown	</option>
+						<option value=	"2268">	Layton	</option>
+						<option value=	"1144">	Leamington	</option>
+						<option value=	"1855">	Leeds	</option>
+						<option value=	"3068">	Lehi	</option>
+						<option value=	"902">	Levan	</option>
+						<option value=	'355'>	Lewiston	</option>
+						<option value=	"3112">	Lindon	</option>
+						<option value=	"1422">	Loa	</option>
+						<option value=	"216">	Logan	</option>
+						<option value=	"1425">	Lyman	</option>
+						<option value=	"1126">	Lynndyl	</option>
+						<option value=	"550">	Manila	</option>
+						<option value=	"948">	Manti	</option>
+						<option value=	"150">	Mantua	</option>
+						<option value=	"2910">	Mapleton	</option>
+						<option value=	"2053">	Marriot-Slaterville	</option>
+						<option value=	"1403">	Marysvale	</option>
+						<option value=	"940">	Mayfield	</option>
+						<option value=	"1120">	Meadow	</option>
+						<option value=	"2839">	Midvale	</option>
+						<option value=	"616">	Midway	</option>
+						<option value=	"247">	Millville	</option>
+						<option value=	"1364">	Minersville	</option>
+						<option value=	"1327">	Moab	</option>
+						<option value=	"904">	Mona	</option>
+						<option value=	"1166">	Monroe	</option>
+						<option value=	"414">	Morgan	</option>
+						<option value=	"960">	Moroni	</option>
+						<option value=	"985">	Mount Pleasant	</option>
+						<option value=	"2788">	Murray	</option>
+						<option value=	"778">	Myton	</option>
+						<option value=	"864">	Naples	</option>
+						<option value=	"914">	Nephi	</option>
+						<option value=	"249">	Nibley	</option>
+						<option value=	"185">	North Logan	</option>
+						<option value=	"2038">	North Ogden	</option>
+						<option value=	"2367">	North Salt Lake	</option>
+						<option value=	"1135">	Oak City	</option>
+						<option value=	"526">	Oakley	</option>
+						<option value=	"2111">	Ogden	</option>
+						<option value=	"1274">	Orangeville	</option>
+						<option value=	"1913">	Orderville	</option>
+						<option value=	"3163">	Orem	</option>
+						<option value=	"1565">	Panguitch	</option>
+						<option value=	"378">	Paradise	</option>
+						<option value=	"1556">	Paragonah	</option>
+						<option value=	"492">	Park City	</option>
+						<option value=	"1543">	Parowan	</option>
+						<option value=	"3397">	Payson	</option>
+						<option value=	"114">	Perry	</option>
+						<option value=	"2028">	Plain City	</option>
+						<option value=	"2905">	Pleasan	</option>
+						<option value=	"65">	Plymouth	</option>
+						<option value=	"26">	Portage	</option>
+						<option value=	"1040">	Price	</option>
+						<option value=	"241">	Providence	</option>
+						<option value=	"3230">	Provo	</option>
+						<option value=	"403">	Randolph	</option>
+						<option value=	"1237">	Redmond	</option>
+						<option value=	"1188">	Richfield	</option>
+						<option value=	"236">	River Heights	</option>
+						<option value=	"2170">	Riverdale	</option>
+						<option value=	"2901">	Riverton	</option>
+						<option value=	"1898">	Rockville	</option>
+						<option value=	"921">	Rocky Ridge	</option>
+						<option value=	"789">	Roosevelt	</option>
+						<option value=	"2173">	Roy	</option>
+						<option value=	"1761">	Saint George	</option>
+						<option value=	"3399">	Salem	</option>
+						<option value=	"1237">	Salina	</option>
+						<option selected value=	"2534">	Salt Lake City	</option>
+						<option value=	"2910">	Sandy</option>
+						<option value=	"1691">	Santa Clara	</option>
+						<option value=	"3414">	Santaquin	</option>
+						<option value=	"3378">	Saratoga Springs	</option>
+						<option value=	"1152">	Scipio	</option>
+						<option value=	"1011">	Scofield	</option>
+						<option value=	"1220">	Sigurd	</option>
+						<option value=	"158">	Smithfield	</option>
+						<option value=	"10">	Snowville	</option>
+						<option value=	"2756">	South Jordan	</option>
+						<option value=	"2173">	South Ogden	</option>
+						<option value=	"2670">	South Salt Lake	</option>
+						<option value=	"2235">	South Weber	</option>
+						<option value=	"3369">	Spanish Fork	</option>
+						<option value=	"978">	Spring	City</option>
+						<option value=	"1902">	Springdale	</option>
+						<option value=	"3337">	Springville	</option>
+						<option value=	"942">	Sterling	</option>
+						<option value=	"467">	Stockton	</option>
+						<option value=	"1074">	Sunnyside	</option>
+						<option value=	"2236">	Sunset	</option>
+						<option value=	"2260">	Syracuse	</option>
+						<option value=	"2732">	Taylorsville	</option>
+						<option value=	"462">	Tooele	</option>
+						<option value=	"1872">	Toquerville	</option>
+						<option value=	"1431">	Torrey	</option>
+						<option value=	"40">	Tremont	</option>
+						<option value=	'1578'>	Tropic	</option>
+						<option value=	"2199">	Uintah	</option>
+						<option value=	"849">	Vernal	</option>
+						<option value=	"436">	Vernon	</option>
+						<option value=	"3165">	Vineyard	</option>
+						<option value=	"1887">	Virgin	</option>
+						<option value=	"712">	Wallsburg	</option>
+						<option value=	"1921">	Washington	</option>
+						<option value=	"1060">	Wellington	</option>
+						<option value=	"367">	Wellsville	</option>
+						<option value=	"426">	Wendover	</option>
+						<option value=	"2345">	West Bountiful	</option>
+						<option value=	"2111">	West Havan	</option>
+						<option value=	"2763">	West Jordan	</option>
+						<option value=	"2242">	West Point	</option>
+						<option value=	"2625">	West Valley	</option>
+						<option value=	"109">	Willard	</option>
+						<option value=	"3406">	Woodland Hills	</option>
+						<option value=	"2355">	Woods Cross	</option>
+				</select>
+				<select id="cont3" name="Time">
+					<option value="2010">2010</option>
+					<option value="2020">2020</option>
+					<option value="2030">2030</option>
+					<option value="2040">2040</option>
+					<option value="2050">2050</option>
+				</select>
+				<select id="cont4" name="scenario">
+					<option selected value="1">Free Flow</option>
+					<option value="2">No Build (2005 Network)</option>
+					<option value="3">LRTP</option>
+					<option value="4">Buildout</option>
+				</select>
+				<input type="button" name="test" value="redraw map" onClick="go()">
+			</form>
+		</div>
+		
+		
+		<div id="grid"> </div>
+		<div id="pie-chart"> </div>
+		<div id="bar-chart"> </div>
+		<div id="map"> </div>      
+    </body>
+    
+    <script>
+
+	//jquery to set values based on selections
+	$("#cont1").change(function() {
+	  mt = $(this).val();
+	  
+	  if(mt !="tt") {
+		$("#cont2").hide(60);
+		} else {$("#cont2").show(100);
+		};
+	}).change();
+
+	$("#cont2").change(function() {
+	  city = $(this).val();
+	  tazid = $(this).val();
+	 }).change();
+	
+	$("#cont3").change(function() {
+	  timeY = $(this).val();
+	}).change();
+	
+	$("#cont4").change(function() {
+	  scen = $(this).val();
+	}).change();
+	
+	$("#cont1").hide();
+	$("#cont3").hide();
+	$("#cont4").hide();
+
+	var  zdata1,
+	 	 mfile = "mf"+timeY + mt + scen  +".csv";
+	
+	var  grid = d3.divgrid();
+		 pchart = pc(),
+		 bchart = bc(),
+		 theMap = choropleth();
+		
+	//global variables to update all charts and maps
+
+	console.log("the map file is: " + mfile)
+	
+//var data= d3.csv()
+
+
+	function go()
+	{
+	
+	$("svg").remove();	
+	var  pchart = pc(),
+		 bchart = bc(),
+		 theMap = choropleth();
+		
+//		 d3.select('#map')
+//			.call(theMap);  
+			
+//	Orig = "+d.v" + document.cont.city.options[document.cont.city.selectedIndex].value
+	
+//		if(mapType === "at") colorAT();
+//		  else if (mapType === "emp") colorEmp();
+//		  else if (mapType ==="hh") colorHH();
+//		else ready();
+	}
+</script>
+    
+    
+</html>

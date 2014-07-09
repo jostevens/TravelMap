@@ -1,0 +1,189 @@
+#control{
+    left: 50%;
+    width:200px
+}
+
+
+form {
+  position: absolute;
+  left: 50%;
+  top: 10px;
+}
+
+.Title {
+    position: absolute;
+    font-size: 30px;
+}
+#map {
+    position: absolute;
+    margin-bottom:10px;
+    margin-right: 5px;
+    top: 40px;
+    left: 50%;
+}
+
+#bar-chart{
+    position: relative;
+    left: 0%;
+    top: 50px;
+}
+
+rect {
+  fill: none;
+  pointer-events: all;
+}
+
+path:hover {
+  fill: steelblue;
+  
+}
+
+#zones .active{
+    stroke-width: .5px;
+    stroke: black;
+}
+
+#zones {
+  cursor: pointer;
+  fill:"none";
+  stroke: none;
+  stroke-width: 1px;
+  stroke-linejoin: round;
+  stroke-opacity:"0.0";
+}
+
+
+body { background: #f7f7f7; height: 100%; margin: 0; padding: 0; color: #111; font-family: Ubuntu, Helvetica, sans-serif; font-size: 12px; line-height: 1.35em;}
+a { color: #6be; text-decoration: none; }
+.row, .header, .cell { height: 18px; }
+.row, .header { clear: left; }
+.header { font-weight: bold; }
+.cell { float: left; overflow: hidden; white-space: nowrap; width: 50px; }
+.col-0 { width: 180px; }
+
+.highlight {background-color: orange;}
+
+/* Values for Travel Time Map 
+    Currently a red-blue color scheme that fades as travel time increases*/
+.q0-120 {fill:rgb(221,61,228); stroke:rgb(221,61,228);}
+.q1-120 {fill:rgb(222,50,182); stroke:rgb(222,50,182);}
+.q2-120 {fill:rgb(94,19,58); stroke:rgb(94,19,58);}
+.q3-120 {fill:rgb(94,19,58); stroke:rgb(94,19,58);}
+.q4-120 {fill:rgb(58,10,10); stroke:rgb(58,10,10);}
+.q5-120 {fill:rgb(58,10,10); stroke:rgb(58,10,10);}
+.q6-120 {fill:rgb(90,19,16); stroke:rgb(90,19,16);}
+.q7-120 {fill:rgb(90,19,16); stroke:rgb(90,19,16);}
+.q8-120 {fill:rgb(90,19,16); stroke:rgb(90,19,16);}
+.q9-120 {fill:rgb(120,44,23); stroke:rgb(120,44,23);}
+.q10-120 {fill:rgb(120,44,23); stroke:rgb(120,44,23);}
+.q11-120 {fill:rgb(120,44,23); stroke:rgb(120,44,23);}
+.q12-120 {fill:rgb(222,80,80); stroke:rgb(222,80,80);}
+.q13-120 {fill:rgb(222,80,80); stroke:rgb(222,80,80);}
+.q14-120 {fill:rgb(222,80,80); stroke:rgb(222,80,80);}
+.q15-120 {fill:rgb(222,80,80); stroke:rgb(222,80,80);}
+.q16-120 {fill:rgb(222,80,80); stroke:rgb(222,80,80);}
+.q17-120 {fill:rgb(222,80,80); stroke:rgb(222,80,80);}
+.q18-120 {fill:rgb(221,128,37); stroke:rgb(221,128,37);}
+.q19-120 {fill:rgb(221,128,37); stroke:rgb(221,128,37);}
+.q20-120 {fill:rgb(221,128,37); stroke:rgb(221,128,37);}
+.q21-120 {fill:rgb(221,128,37); stroke:rgb(221,128,37);}
+.q22-120 {fill:rgb(221,128,37); stroke:rgb(221,128,37);}
+.q23-120 {fill:rgb(221,128,37); stroke:rgb(221,128,37);}
+.q24-120 {fill:rgb(241,186,55); stroke:rgb(241,186,55);}
+.q25-120 {fill:rgb(241,186,55); stroke:rgb(241,186,55);}
+.q26-120 {fill:rgb(241,186,55); stroke:rgb(241,186,55);}
+.q27-120 {fill:rgb(241,186,55); stroke:rgb(241,186,55);}
+.q28-120 {fill:rgb(241,186,55); stroke:rgb(241,186,55);}
+.q29-120 {fill:rgb(241,186,55); stroke:rgb(241,186,55);}
+.q30-120 {fill:rgb(252,221,101); stroke:rgb(252,221,101);}
+.q31-120 {fill:rgb(252,221,101); stroke:rgb(252,221,101);}
+.q32-120 {fill:rgb(252,221,101); stroke:rgb(252,221,101);}
+.q33-120 {fill:rgb(252,221,101); stroke:rgb(252,221,101);}
+.q34-120 {fill:rgb(252,221,101); stroke:rgb(252,221,101);}
+.q35-120 {fill:rgb(252,221,101); stroke:rgb(252,221,101);}
+.q36-120 {fill:rgb(251,250,95); stroke:rgb(251,250,95);}
+.q37-120 {fill:rgb(251,250,95); stroke:rgb(251,250,95);}
+.q38-120 {fill:rgb(251,250,95); stroke:rgb(251,250,95);}
+.q39-120 {fill:rgb(251,250,95); stroke:rgb(251,250,95);}
+.q40-120 {fill:rgb(251,250,95); stroke:rgb(251,250,95);}
+.q41-120 {fill:rgb(251,250,95); stroke:rgb(251,250,95);}
+.q42-120 {fill:rgb(251,250,95); stroke:rgb(251,250,95);}
+.q43-120 {fill:rgb(251,250,95); stroke:rgb(251,250,95);}
+.q44-120 {fill:rgb(251,250,95); stroke:rgb(251,250,95);}
+.q45-120 {fill:rgb(251,250,95); stroke:rgb(251,250,95);}
+.q46-120 {fill:rgb(251,250,95); stroke:rgb(251,250,95);}
+.q47-120 {fill:rgb(218,227,69); stroke:rgb(251,250,95);}
+.q48-120 {fill:rgb(161,186,44); stroke:rgb(161,186,44);}
+.q49-120 {fill:rgb(161,186,44); stroke:rgb(161,186,44);}
+.q50-120 {fill:rgb(161,186,44); stroke:rgb(161,186,44);}
+.q51-120 {fill:rgb(161,186,44); stroke:rgb(161,186,44);}
+.q52-120 {fill:rgb(161,186,44); stroke:rgb(161,186,44);}
+.q53-120 {fill:rgb(161,186,44); stroke:rgb(161,186,44);}
+.q54-120 {fill:rgb(161,186,44); stroke:rgb(161,186,44);}
+.q55-120 {fill:rgb(161,186,44); stroke:rgb(161,186,44);}
+.q56-120 {fill:rgb(161,186,44); stroke:rgb(161,186,44);}
+.q57-120 {fill:rgb(161,186,44); stroke:rgb(161,186,44);}
+.q58-120 {fill:rgb(161,186,44); stroke:rgb(161,186,44);}
+.q59-120 {fill:rgb(161,186,44); stroke:rgb(161,186,44);}
+.q60-120 {fill:rgb(115,138,24); stroke:rgb(115,138,24);}
+.q61-120 {fill:rgb(115,138,24); stroke:rgb(115,138,24);}
+.q62-120 {fill:rgb(115,138,24); stroke:rgb(115,138,24);}
+.q63-120 {fill:rgb(115,138,24); stroke:rgb(115,138,24);}
+.q64-120 {fill:rgb(115,138,24); stroke:rgb(115,138,24);}
+.q65-120 {fill:rgb(115,138,24); stroke:rgb(115,138,24);}
+.q66-120 {fill:rgb(115,138,24); stroke:rgb(115,138,24);}
+.q67-120 {fill:rgb(115,138,24); stroke:rgb(115,138,24);}
+.q68-120 {fill:rgb(115,138,24); stroke:rgb(115,138,24);}
+.q69-120 {fill:rgb(115,138,24); stroke:rgb(115,138,24);}
+.q70-120 {fill:rgb(115,138,24); stroke:rgb(115,138,24);}
+.q71-120 {fill:rgb(115,138,24); stroke:rgb(115,138,24);}
+.q72-120 {fill:rgb(86,110,21); stroke:rgb(86,110,21);}
+.q73-120 {fill:rgb(86,110,21); stroke:rgb(86,110,21);}
+.q74-120 {fill:rgb(86,110,21); stroke:rgb(86,110,21);}
+.q75-120 {fill:rgb(86,110,21); stroke:rgb(86,110,21);}
+.q76-120 {fill:rgb(86,110,21); stroke:rgb(86,110,21);}
+.q77-120 {fill:rgb(86,110,21); stroke:rgb(86,110,21);}
+.q78-120 {fill:rgb(86,110,21); stroke:rgb(86,110,21);}
+.q79-120 {fill:rgb(86,110,21); stroke:rgb(86,110,21);}
+.q80-120 {fill:rgb(86,110,21); stroke:rgb(86,110,21);}
+.q81-120 {fill:rgb(86,110,21); stroke:rgb(86,110,21);}
+.q82-120 {fill:rgb(86,110,21); stroke:rgb(86,110,21);}
+.q83-120 {fill:rgb(86,110,21); stroke:rgb(86,110,21);}
+.q84-120 {fill:rgb(52,73,11); stroke:rgb(52,73,11);}
+.q85-120 {fill:rgb(52,73,11); stroke:rgb(52,73,11);}
+.q86-120 {fill:rgb(52,73,11); stroke:rgb(52,73,11);}
+.q87-120 {fill:rgb(52,73,11); stroke:rgb(52,73,11);}
+.q88-120 {fill:rgb(52,73,11); stroke:rgb(52,73,11);}
+.q89-120 {fill:rgb(52,73,11); stroke:rgb(52,73,11);}
+.q90-120 {fill:rgb(52,73,11); stroke:rgb(52,73,11);}
+.q91-120 {fill:rgb(52,73,11); stroke:rgb(52,73,11);}
+.q92-120 {fill:rgb(52,73,11); stroke:rgb(52,73,11);}
+.q93-120 {fill:rgb(52,73,11); stroke:rgb(52,73,11);}
+.q94-120 {fill:rgb(52,73,11); stroke:rgb(52,73,11);}
+.q95-120 {fill:rgb(52,73,11); stroke:rgb(52,73,11);}
+.q96-120 {fill:rgb(36,50,5); stroke:rgb(36,50,5);}
+.q97-120 {fill:rgb(36,50,5); stroke:rgb(36,50,5);}
+.q98-120 {fill:rgb(36,50,5); stroke:rgb(36,50,5);}
+.q99-120 {fill:rgb(36,50,5); stroke:rgb(36,50,5);}
+.q100-120 {fill:rgb(36,50,5); stroke:rgb(36,50,5);}
+.q101-120 {fill:rgb(36,50,5); stroke:rgb(36,50,5);}
+.q102-120 {fill:rgb(36,50,5); stroke:rgb(36,50,5);}
+.q103-120 {fill:rgb(36,50,5); stroke:rgb(36,50,5);}
+.q104-120 {fill:rgb(36,50,5); stroke:rgb(36,50,5);}
+.q105-120 {fill:rgb(36,50,5); stroke:rgb(36,50,5);}
+.q106-120 {fill:rgb(36,50,5); stroke:rgb(36,50,5);}
+.q107-120 {fill:rgb(36,50,5); stroke:rgb(36,50,5);}
+.q108-120 {fill:rgb(25,37,3); stroke:rgb(25,37,3);}
+.q109-120 {fill:rgb(25,37,3); stroke:rgb(25,37,3);}
+.q110-120 {fill:rgb(25,37,3); stroke:rgb(25,37,3);}
+.q111-120 {fill:rgb(25,37,3); stroke:rgb(25,37,3);}
+.q112-120 {fill:rgb(25,37,3); stroke:rgb(25,37,3);}
+.q113-120 {fill:rgb(25,37,3); stroke:rgb(25,37,3);}
+.q114-120 {fill:rgb(25,37,3); stroke:rgb(25,37,3);}
+.q115-120 {fill:rgb(25,37,3); stroke:rgb(25,37,3);}
+.q116-120 {fill:rgb(25,37,3); stroke:rgb(25,37,3);}
+.q117-120 {fill:rgb(25,37,3); stroke:rgb(25,37,3);}
+.q118-120 {fill:rgb(25,37,3); stroke:rgb(25,37,3);}
+.q119-120 {fill:rgb(25,37,3); stroke:rgb(25,37,3);}
+.q120-120 {fill:rgb(25,37,3); stroke:rgb(25,37,3);}
+
